@@ -1,0 +1,43 @@
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Knockout components 1</title>
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+<script src="node_modules\jquery\dist\jquery.min.js"></script>
+<link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+<script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+<script src="node_modules\knockout\build\output\knockout-latest.debug.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class=""> knockout components</h1>
+    
+    <input-output></input-output>
+    <input-output></input-output>
+    <input-output></input-output>
+  </div>
+
+  <script>
+
+ko.components.register('input-output',{
+  template:`
+  <p>
+    <input type="text" data-bind="value:textInput">
+  </p>
+  <p>
+    <span data-bind="text:textInput">
+    </span>
+  </p>
+  `   ,
+  //constructor viewModel
+  viewModel: function(){
+       this.textInput = ko.observable();
+  }
+})
+
+
+  ko.applyBindings();
+  </script>
+
+</body>
+</html>
