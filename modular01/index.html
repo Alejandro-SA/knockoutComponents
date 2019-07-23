@@ -1,0 +1,47 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Knockout components 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/node_modules\bootstrap\dist\css\bootstrap.css">
+    <script src="/node_modules/requirejs/require.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <h1 class=""> knockout components</h1>
+        
+        <input-output></input-output>
+        <input-output></input-output>
+        <input-output></input-output>
+      </div>
+    
+      <!-- <script>
+    
+    ko.components.register('input-output',{
+      template:{ require: 'text!/modular01/input-output.html' } 
+        ,
+      //constructor viewModel
+      viewModel: function(){
+           this.textInput = ko.observable();
+      }
+    })
+    
+    
+      ko.applyBindings();
+      </script> -->
+
+      <script>
+        
+require(['/modular01/main.js'], function(){
+
+  require(["input-output"],function(){
+  });
+})
+ </script>
+<script>
+
+</script>
+
+
+    </body>
+    </html>
